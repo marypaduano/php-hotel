@@ -39,25 +39,8 @@ $hotels = [
   ],
 
 ];
-foreach ($hotels as $key => $value) {
-?>
-<li><?php echo $key; ?>
-    <ul>
-      <?php
-      foreach ($value as $hotel) {
-      ?>
-        <li><?php echo $hotel; ?></li>
-      <?php
-      };
-      ?>
+?>;
 
-    </ul>
-  </li>
-<?php
-};
-?>
-
-</ul>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,12 +48,49 @@ foreach ($hotels as $key => $value) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hotels</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-  
-
-
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h1></h1>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Descrizione</th>
+                                    <th scope="col">Parking</th>
+                                    <th scope="col">Voto</th>
+                                    <th scope="col">Distanza dal centro</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach($hotels as $key => $value) { ?>
+                                <tr>
+                                    <th scope="row"><?= $key +1 ?></th>
+                                    <td><?= $value["name"] ?></td>
+                                    <td><?= $value["description"] ?></td>
+                                    <td><?= $value["parking"] ? "Disponibile" : "Non disponibile" ?></td>
+                                    <td><?= $value["vote"] ?></td>
+                                    <td><?= $value["distance_to_center"] . " km" ?></td>
+                                </tr>
+                                <?php
+                                  };
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 </body>
 
 </html>
