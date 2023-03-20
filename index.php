@@ -90,6 +90,35 @@ $hotels = [
                 </div>
             </div>
         </div>
+
+        <!-- BONUS -->
+        
+        <div class="container mt-3 d-flex justify-content-center">
+          <form action="" method="GET">
+          <!-- parcheggio -->
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" name="parking">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Parcheggio</label>
+            </div>
+          <!-- vote -->
+            <select class="form-select" name="star" for="star">
+              <option selected>Stelle</option>
+              <option value="1">1 o più</option>
+              <option value="2">2 o più</option>
+              <option value="3">3 o più</option>
+              <option value="4">4 o più</option>
+              <option value="5">5</option>
+          </select>
+        <button class="btn btn-danger ">Filtra</button>
+        
+        </form>
+      </div>
+      <?php 
+       
+        
+        
+          
+      ?>
         
 </body>
 
